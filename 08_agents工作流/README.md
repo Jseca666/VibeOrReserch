@@ -8,6 +8,7 @@
 - 自动闭环运行：每轮任务按 `自进化自动工作闭环协议.md` 执行，完成 T1-T7 分类、角色调用、产物验收、债务更新、记忆写回判断、evolution report 和下一轮任务包。
 - Evolution report 归档：关键任务 report 归档到 `evolution_reports/`。
 - 下一轮任务包追踪：生成的 NXT 任务包登记到 `下一轮任务包队列.md`。
+- Pro 外部评审对接：按 `Pro外部评审对接流程.md` 区分 GitHub 公开镜像与本地临时核验包。
 - 角色职责总入口：先看 `角色职责矩阵.md`。
 - 研究方向模糊：先用 `PI导师`；副导师只给审查建议，不直接改变主线。
 - DRCC-MILP 主线推进：优先调用 `DRCC reformulation 专家`、`大规模MILP算法专家`、`Wasserstein-DRO副导师`、`运筹最优化副导师`。
@@ -22,6 +23,7 @@
 - 严格证明：用 `proof-writer`，然后必须用 `证明审计员` 审查。
 - 论文规划：用 `paper-planning`。
 - 论文自审：用 `paper-review`，但数学 claim 先看审批表。
+- Pro 反馈：只作为外部审查建议，不能替代 `PI导师`、claim 审批、研究债务关闭或角色变更落档。
 
 ## 标准流程
 
