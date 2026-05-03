@@ -5,6 +5,7 @@
 ## 主脑与技能路由
 
 - 默认把 Codex GPT-5.5 xhigh 作为主脑。
+- 自 NXT-20260503-010 起，低风险整理、结构化副本维护、摘要、检索初筛和日志整理可按 `08_agents工作流/model_routing_policy.md` 路由到 GPT-5.4 xhigh；T2 证明/定理、T5 新颖性边界、T6 claim、T7 主线/门禁变化、Auto-Gate 关键裁决和任何 `claim阻断` 相关判断仍由 GPT-5.5 xhigh 或 Auto-Gate gate 层收口。
 - 外层科研流程优先使用 EvoSkills：`paper-navigator`、`research-survey`、`paper-planning`、`paper-review`、`evo-memory`。
 - 数学推导优先使用本机技能 `formula-derivation`。
 - 定理、命题、引理、证明补全优先使用本机技能 `proof-writer`。

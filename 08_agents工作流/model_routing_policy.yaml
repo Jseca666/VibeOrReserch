@@ -1,0 +1,156 @@
+{
+  "version": "2026-05-03",
+  "policy_id": "MRP-20260503-001",
+  "default_policy": {
+    "low_risk_route": "execution",
+    "high_risk_route": "gate",
+    "cost_baseline_route": "execution",
+    "high_risk_cost_multiplier": 2.0,
+    "model_names_are_configurable": true
+  },
+  "capability_tiers": {
+    "execution": {
+      "route_id": "gpt-5.4-xhigh",
+      "model_id": "gpt-5.4",
+      "reasoning_effort": "xhigh",
+      "cost_multiplier": 1.0,
+      "parallel_role": "worker",
+      "allowed_task_types": [
+        "T0_draft",
+        "T1",
+        "T3_draft",
+        "T4_log",
+        "T5_retrieval",
+        "T7_format"
+      ],
+      "requires_review_for": [
+        "claim",
+        "theorem",
+        "novelty",
+        "rd_close",
+        "autogate_final",
+        "out_paper_eligible"
+      ]
+    },
+    "review": {
+      "route_id": "gpt-5.5-xhigh",
+      "model_id": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "cost_multiplier": 2.0,
+      "parallel_role": "reviewer",
+      "allowed_task_types": [
+        "T0_review",
+        "T3_review",
+        "T4_counterexample_review",
+        "T5_novelty",
+        "T7_policy_review"
+      ],
+      "requires_review_for": []
+    },
+    "gate": {
+      "route_id": "gpt-5.5-xhigh",
+      "model_id": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "cost_multiplier": 2.0,
+      "parallel_role": "gate",
+      "allowed_task_types": [
+        "T2",
+        "T5_boundary",
+        "T6",
+        "T7_gate",
+        "autogate_final"
+      ],
+      "requires_review_for": []
+    },
+    "merge_owner": {
+      "route_id": "gpt-5.5-xhigh",
+      "model_id": "gpt-5.5",
+      "reasoning_effort": "xhigh",
+      "cost_multiplier": 2.0,
+      "parallel_role": "merge_owner",
+      "allowed_task_types": [
+        "parallel_merge",
+        "conflict_resolution",
+        "autogate_merge"
+      ],
+      "requires_review_for": []
+    }
+  },
+  "task_defaults": {
+    "T0": {
+      "model_tier": "mixed",
+      "worker_route": "execution",
+      "review_route": "review",
+      "parallelizable": "partial",
+      "cost_class": "medium"
+    },
+    "T1": {
+      "model_tier": "low",
+      "worker_route": "execution",
+      "review_route": "review",
+      "parallelizable": "yes",
+      "cost_class": "low"
+    },
+    "T2": {
+      "model_tier": "gate",
+      "worker_route": "gate",
+      "review_route": "gate",
+      "parallelizable": "partial",
+      "cost_class": "high"
+    },
+    "T3": {
+      "model_tier": "mixed",
+      "worker_route": "execution",
+      "review_route": "review",
+      "parallelizable": "partial",
+      "cost_class": "medium"
+    },
+    "T4": {
+      "model_tier": "mixed",
+      "worker_route": "execution",
+      "review_route": "review",
+      "parallelizable": "yes",
+      "cost_class": "medium"
+    },
+    "T5": {
+      "model_tier": "mixed",
+      "worker_route": "execution",
+      "review_route": "gate",
+      "parallelizable": "yes",
+      "cost_class": "medium"
+    },
+    "T6": {
+      "model_tier": "gate",
+      "worker_route": "gate",
+      "review_route": "gate",
+      "parallelizable": "no",
+      "cost_class": "high"
+    },
+    "T7": {
+      "model_tier": "mixed",
+      "worker_route": "execution",
+      "review_route": "gate",
+      "parallelizable": "partial",
+      "cost_class": "medium"
+    }
+  },
+  "escalation_triggers": [
+    "proof_gap",
+    "claim_impact",
+    "literature_conflict",
+    "novelty_boundary",
+    "rd_close_candidate",
+    "out_paper_eligible",
+    "worker_conflict",
+    "counterexample_hits_candidate",
+    "autogate_final"
+  ],
+  "forbidden_for_execution_route": [
+    "claim_upgrade",
+    "rd_close",
+    "proof_pass",
+    "novelty_final",
+    "paper_eligible_out",
+    "autogate_final_decision"
+  ]
+}

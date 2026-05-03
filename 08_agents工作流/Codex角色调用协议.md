@@ -55,6 +55,27 @@
 Auto-Gate 裁决 / 人类确认需求：
 ```
 
+### 2.3 模型路由字段
+
+自 NXT-20260503-010 起，轻量任务和关键任务都应按需记录模型路由字段。具体模型映射见 `model_routing_policy.yaml`，人类可读规则见 `model_routing_policy.md`，并行任务边界见 `并行agents调度协议.md`。
+
+```text
+model_tier：low / mixed / high / gate
+worker_model：gpt-5.4-xhigh / gpt-5.5-xhigh / none
+review_model：gpt-5.5-xhigh / none
+parallelizable：yes / no / partial
+merge_owner：Auto-Gate / 角色名 / gpt-5.5-xhigh
+escalation_reason：none / proof_gap / claim_impact / literature_conflict / rd_close_candidate / out_paper_eligible / worker_conflict
+cost_class：low / medium / high / capped
+```
+
+默认口径：
+
+- GPT-5.4 xhigh 只用于低风险、可回滚、结构化、摘要、格式迁移、队列同步、检索初筛和日志整理。
+- GPT-5.5 xhigh 用于 T2 证明/定理、T5 新颖性边界、T6 claim、T7 主线/角色/门禁变化、Auto-Gate 关键裁决和任何 `claim阻断` 相关判断。
+- T0/T3/T4/T5 可采用混合模式：GPT-5.4 xhigh 生成草案或索引，GPT-5.5 xhigh 复核高风险结论。
+- 并行 worker 只产出草案、证据、结构化 rows 或候选 RD/NXT/OUT；最终合并和项目状态写回由 Auto-Gate 或 GPT-5.5 merge owner 完成。
+
 ## 3. 上层任务类型
 
 T0 是论文导向前置层，不替代 T1-T7。T0 用于先固定论文主题、贡献假设、related work 主线和证据需求；后续 T1-T7 技术任务必须能说明服务的论文锚点，或者被标为内部技术债务。
