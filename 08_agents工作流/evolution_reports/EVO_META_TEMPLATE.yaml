@@ -1,0 +1,17 @@
+{
+  "evo_id": "",
+  "date": "",
+  "task_types": [],
+  "claim_ids": [],
+  "rd_updates": [],
+  "nxt_updates": [],
+  "out_updates": [],
+  "memory_updates": [],
+  "autogate_status": "",
+  "human_confirmation_need": "无",
+  "public_commit": "",
+  "private_sources_used": [],
+  "privacy_level": "public",
+  "public_allowed": true,
+  "redaction_rule": ""
+}

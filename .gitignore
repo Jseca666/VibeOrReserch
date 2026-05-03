@@ -33,3 +33,9 @@ build/
 *.pdf
 *.zip
 *.tar.gz
+
+# 私有 raw notes 映射与定理验证索引
+04_论文草稿/paper_strategy/raw_notes_anchor_map.md
+04_论文草稿/paper_strategy/raw_notes_anchor_map.csv
+04_论文草稿/paper_strategy/raw_notes_theorem_validation_index.md
+04_论文草稿/paper_strategy/raw_notes_theorem_validation_index.jsonl

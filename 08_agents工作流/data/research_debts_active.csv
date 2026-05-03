@@ -1,0 +1,6 @@
+"rd_id","debt_type","severity","claim_ids","blocking_object","status","autogate_status","close_condition","human_confirmation_need","related_nxt","related_evo","public_allowed"
+"RD-20260501-001","claim阻断","高","C-010","C-010/W1 证明审计与距离链边界","进行中","继续阻断","P1-P5 proof audit、反例边界、文献边界齐备后仅可进入关闭候选","强 claim 写入前","NXT-20260502-014;NXT-20260503-006","EVO-20260502-016;EVO-20260503-008","true"
+"RD-20260501-002","阻塞","高","C-011","C-011/W1 网格接口、big-M 与离散验证","进行中","继续阻断","模型卡、小规模验证、离散/连续边界和 baseline 语境完成","强 claim 写入前","NXT-20260502-015;NXT-20260503-006","EVO-20260503-008","true"
+"RD-20260502-001","claim阻断","高","C-010;C-011","W1/W2 成本、半径、支撑口径混用风险","进行中","继续阻断","W1 口径与待定 W2 分支完全隔离并被证明审计复核","强 claim 写入前","NXT-20260502-013;NXT-20260503-006","EVO-20260502-015;EVO-20260503-008","true"
+"RD-20260502-003","阻塞","中高","C-009","非单调 P、finite fiber、fold locus 反例风险","进行中","暂缓主线","若重启该分支，需反例优先矩阵和 T2/T4 任务","方向偏好或强 claim 写入前","NXT-20260503-006","EVO-20260503-008","true"
+"RD-20260502-006","claim阻断","高","C-010;C-011","文献边界、原创性和应用侧 baseline 缺口","进行中","继续阻断","DRCC reformulation、DRCC-MIP、UAV inspection、wind-aware energy 文献边界完成后仅可进入候选","强 claim 写入前","NXT-20260503-006;NXT-20260503-007;NXT-20260502-015","EVO-20260503-008;EVO-20260503-009","true"
